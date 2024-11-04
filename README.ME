@@ -1,0 +1,78 @@
+Pruebas realizadas en postman:
+
+                    Obtener carro por id 
+----/api/carts
+
+http://localhost:5050/api/carts/64a6c3f1a3f8b1a731d3e1a4
+
+metodo GET devuelve:
+{
+    "_id": "64a6c3f1a3f8b1a731d3e1a1",
+    "products": [
+        {
+            "product": {
+                "_id": "6727a3cba93332e3b1acfd95",
+                "id": 3,
+                "name": "V8 Pet",
+                "category": "EIFS",
+                "price": 181270,
+                "available": true
+            },
+            "quantity": 2
+        },
+        {
+            "product": {
+                "_id": "6727a3cba93332e3b1acfd96",
+                "id": 4,
+                "name": "Beer - Moosehead",
+                "category": "Granite Surfaces",
+                "price": 516986,
+                "available": false
+            },
+            "quantity": 1
+        }
+    ]
+}
+
+                    Eliminar un producto del carro
+-------/api/carts/idcart/products/idproduct
+http://localhost:5050/api/carts/64a6c3f1a3f8b1a731d3e1a2/products/6727a3cba93332e3b1acfd99
+El metodo DELETE nos devuelve:
+{
+    "_id": "64a6c3f1a3f8b1a731d3e1a4",
+    "products": [
+        {
+            "product": {
+                "_id": "6727a3cba93332e3b1acfd9c",
+                "id": 10,
+                "name": "Wine - Kwv Chenin Blanc South",
+                "category": "Roofing (Metal)",
+                "price": 933875,
+                "available": true
+            },
+            "quantity": 1
+        }
+    ]
+}
+
+                    Actualizar el carro
+-------/api/carts/idcart
+http://localhost:5050/api/carts/64a6c3f1a3f8b1a731d3e1a2
+
+en el body usamos formato raw y JSON:
+{
+    "quantity": 15 // Cambia este número por la cantidad que desees actualizar
+}
+
+El metodo PUT nos devuelve:
+
+{
+    "_id": "64a6c3f1a3f8b1a731d3e1a2",
+    "products": [
+        {
+            "_id": "67282994993d5afeb2893066",
+            "product": "6727a3cba93332e3b1acfd97",
+            "quantity": 15
+        }
+    ]
+}
